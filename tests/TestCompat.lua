@@ -2,8 +2,8 @@
 -- These functions adapt or mock Lua extensions in the WoW API.
 --
 
-function date(...)
-    return os.date(...)
+function debugstack(...)
+    return debug.traceback(...)
 end
 
 function strmatch(...)
