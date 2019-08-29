@@ -1,1 +1,4 @@
 package-as: LibStub
+license-output: LICENSE
+ignore:
+  - tests

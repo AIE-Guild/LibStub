@@ -1,0 +1,24 @@
+language: python
+sudo: false
+
+env:
+  - LUA="lua=5.1" LUA_PATH="tests/?;tests/?.lua;;"
+
+before_install:
+  - pip install hererocks
+  - hererocks lua_install -r^ --$LUA
+  - export PATH=$PATH:$PWD/lua_install/bin
+
+install:
+  - luarocks install luaunit
+
+script:
+  - lua tests/TestNewLibrary.lua -v
+  - lua tests/TestAccessors.lua -v
+  - lua tests/TestProxy.lua -v
+  - lua tests/TestUpdate.lua -v
+
+notifications:
+  email:
+    on_success: change
+    on_failure: always
