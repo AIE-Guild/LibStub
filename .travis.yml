@@ -16,6 +16,7 @@ script:
   - lua tests/TestNewLibrary.lua -v
   - lua tests/TestAccessors.lua -v
   - lua tests/TestProxy.lua -v
+  - lua tests/TestUpdate.lua -v
 
 notifications:
   email:
